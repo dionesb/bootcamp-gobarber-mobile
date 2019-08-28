@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
+import PropTypes from 'prop-types';
 
 import logo from '~/assets/logo.png';
 
@@ -46,9 +47,15 @@ export default function SignUp({ navigation }) {
         </Form>
 
         <SignLink onPress={() => navigation.navigate('SignUp')}>
-          <SignLinkText>Criar conta gratuita</SignLinkText>
+          <SignLinkText>Já tenho conta</SignLinkText>
         </SignLink>
       </Container>
     </Background>
   );
 }
+
+SignUp.propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+};
